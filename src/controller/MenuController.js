@@ -24,3 +24,36 @@ export async function Login(req, res) {
       });
     }
 }
+
+//registrar Usuarios Verificando que el usuario no exista en la Base de Datos
+export async function Signup(req, res) {
+    const {username,correo,nombre,apellido,contraseña,code}=req.body;
+    try {
+        usuario.findOne({
+         where:{username:username}
+         ,}).then( async user => {
+             if(!user){
+                let newUsuario = await usuario.create(
+                    {
+                        username,correo,nombre,apellido,contraseña,code
+                    },
+                    {
+                        fields: ["username","correo","nombre","apellido","contraseña","code"],
+                    }
+                );
+                console.log('Usuario Registrado con Exito')
+                return res.json(newUsuario);
+             }else{
+                 res.status(200).json({message:"El Nombre de Usuario Ya esta Registrado, Intente con otro"});
+             }
+            }).catch (err => {
+                res.status(500).json(err.message);
+            });
+        } catch (err) {
+          res.status(500).json({
+            message: err.message,
+          });
+        }
+    //res.json("received");
+    console.log(req.body);
+}

@@ -19,6 +19,7 @@ export const usuario = sequelize.define(
       unique: true,
       validate:{
         len: {args : [5,15], msg:" el username debe tener entre 5 y 15 caracteres, intentelo nuevamente"},
+        isAlphanumeric: {args:true , msg:"Por favor Ingrese solo Letras y Numeros"},
       }
     },
     correo: {

@@ -16,7 +16,7 @@ export async function getUsers(req, res) {
     }
   }
 
-//registrar Usuarios
+/* registrar Usuarios ( este metodo Funciona Pero Utilizar Mejor el Metodo de SingUp)
 export async function CreateUsers(req, res) {
     const {username,correo,nombre,apellido,contraseña,code}=req.body;
 
@@ -38,7 +38,7 @@ export async function CreateUsers(req, res) {
     }
     //res.json("received");
     console.log(req.body);
-}
+}*/
 
 //Obtener un usuario
 export async function getOneUser(req, res) {
