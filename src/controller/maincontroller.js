@@ -29,15 +29,14 @@ export async function CreateUsers(req, res) {
                 fields: ["username","correo","nombre","apellido","contraseña","code"],
             }
         );
-        console.log('si se pudo')
+        console.log('si se creo el Usuario')
         return res.json(newUsuario);
-    }catch(error){
+    }catch(err){
         res.status(500).json({
-            message: error.message,
+            message: err.message,
         });
-        console.log('nose pudo carnal');
     }
-    res.json("received");
+    //res.json("received");
     console.log(req.body);
 }
 

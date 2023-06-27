@@ -8,6 +8,8 @@ import ExamenRoutes from "./routes/ExamenRoutes.js";
 import DetallesRoutes from "./routes/ExamenDetalleRoutes.js"
 import RecetaRoutes from "./routes/RecetaRoutes.js"
 import MedicamentosRoutes from './routes/MedicamentoRoutes.js'
+import MenuRoutes from  './routes/MenuRoutes.js';
+
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
@@ -19,6 +21,7 @@ app.use("/api/examen",ExamenRoutes);
 app.use("/api/examen/detalle",DetallesRoutes);
 app.use("/api/receta",RecetaRoutes);
 app.use("/api/medicamento",MedicamentosRoutes);
+app.use("/api/Login",MenuRoutes)
 
 
 
