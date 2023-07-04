@@ -13,7 +13,9 @@ export async function Login(req, res) {
             if(!user){
                 res.status(500).json({message:"Ingrese Un Usuario Valido, Intentelo Nuevamente"});
             }else{
-                res.status(200).json({message:"Usuario Encontrado,Bienvenido"});
+                //res.status(200).json({message:"Usuario Encontrado,Bienvenido"});
+                res.status(200).json(JSON.stringify(user));
+                console.log(user);
             }
         }).catch (err => {
             res.status(500).json({message:"no papu esta onda no funciona"});
@@ -41,6 +43,7 @@ export async function Signup(req, res) {
                         fields: ["username","correo","nombre","apellido","contraseña","code"],
                     }
                 );
+                //res.status(200).json({message:"Usuario Registrado"});
                 console.log('Usuario Registrado con Exito')
                 return res.json(newUsuario);
              }else{

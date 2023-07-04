@@ -30,7 +30,7 @@ export async function CrearDetalleExamen(req, res) {
             gasto,descripcion,fecha,hora,resultado,code_exam
           },
           {
-              fields: ["gasto","descripcion","descripcion","fecha","hora","resultado","code_exam"],
+              fields: ["gasto","descripcion","fecha","hora","resultado","code_exam"],
           }
       );
       console.log('si se pudo')
@@ -41,7 +41,7 @@ export async function CrearDetalleExamen(req, res) {
       });
       console.log('nose pudo carnal');
   }
-  res.json("received");
+  //res.json("received");
   console.log(req.body);
 }
 
@@ -78,5 +78,24 @@ export async function EliminarDetalle(req, res) {
     return res.sendStatus(204);
   } catch (error) {
     return res.status(500).json({ message: error.message });
+  }
+}
+
+
+//Obtener todos los detalles de un Examen
+export async function getOneExamDetail(req, res) {
+  const {code_exam} = req.params;
+  console.log(code_exam);
+  try {
+    const detail = await detalles.findAll({
+      where:{
+        code_exam,
+      },
+    });
+    res.json(detail);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
   }
 }

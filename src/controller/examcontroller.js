@@ -75,3 +75,21 @@ export async function deleteExamenes(req, res) {
     return res.status(500).json({ message: error.message });
   }
 }
+
+//Obtener todos los examenes por cita  
+export async function getOneExam(req, res) {
+  const {code_cita} = req.params;
+  console.log(code_cita);
+  try {
+    const examen2 = await examen.findAll({
+      where:{
+        code_cita,
+      },
+    });
+    res.json(examen2);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}

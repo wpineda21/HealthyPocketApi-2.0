@@ -12,15 +12,12 @@ export const detalles = sequelize.define(
         allowNull: false,
     },
     gasto: {
-        type: DataTypes.DOUBLE,
-        allowNull: false,
+        type: DataTypes.INTEGER,
     },
     descripcion: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-          notEmpty:{args:true,msg:"El Campo esta Vacio"}  
-        }
+
     },
     fecha: {
       type: DataTypes.DATE,
@@ -33,9 +30,7 @@ export const detalles = sequelize.define(
     resultado: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate:{
-        notEmpty:{args:true,msg:"El Campo esta Vacio"}  
-      }
+
     },
     code_exam: {
         type: DataTypes.UUID,

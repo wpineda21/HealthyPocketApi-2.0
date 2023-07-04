@@ -76,3 +76,21 @@ export async function EliminarMedicamento(req, res) {
     return res.status(500).json({ message: error.message });
   }
 }
+
+//Obtener Medicamentos Por Usuario
+export async function getOneMedicamento(req, res) {
+  const {code_rcta} = req.params;
+  console.log(code_rcta);
+  try {
+    const medicamento2 = await medicamento.findAll({
+      where:{
+        code_rcta,
+      },
+    });
+    res.json(medicamento2);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}

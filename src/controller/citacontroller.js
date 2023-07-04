@@ -81,3 +81,22 @@ export async function deleteCita(req, res) {
       return res.status(500).json({ message: error.message });
     }
   }
+
+//Obtener todas las citas de un solo USUARIO  
+
+export async function getOnecita(req, res) {
+  const {code_user} = req.params;
+  console.log(code_user);
+  try {
+    const citas = await cita.findAll({
+      where:{
+        code_user,
+      },
+    });
+    res.json(citas);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}

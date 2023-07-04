@@ -26,7 +26,7 @@ app.use("/api/users", UserRoutes);
 app.use("/api/cita", CitaRoutes);
 app.use("/api/medico", MedicoRoutes);
 app.use("/api/examen", ExamenRoutes);
-app.use("/api/examen/detalle", DetallesRoutes);
+app.use("/api/detalle", DetallesRoutes);
 app.use("/api/receta", RecetaRoutes);
 app.use("/api/medicamento", MedicamentosRoutes);
 app.use("/api/Login", MenuRoutes);
