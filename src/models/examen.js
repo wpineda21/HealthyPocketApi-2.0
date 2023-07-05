@@ -14,10 +14,6 @@ export const examen = sequelize.define(
     nombre: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-          isAlpha: {msg:"Por favor Ingresar Solo Letras "},
-          notEmpty:{args:true,msg:"El Campo esta Vacio"}  
-        }
     },
     code_cita: {
         type: DataTypes.UUID,

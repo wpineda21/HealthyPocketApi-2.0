@@ -14,9 +14,7 @@ export const medicamento = sequelize.define(
     descripcion: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-          notEmpty:{args:true,msg:"El Campo esta Vacio"}  
-        }
+
     },
     hora: {
         type: DataTypes.TIME,
@@ -25,9 +23,7 @@ export const medicamento = sequelize.define(
     cantidad: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        validate:{
-          isInt:{args:true,msg:"Por Favor Ingrese Un Numero"}  
-        }
+
     },
     code_rcta: {
         type: DataTypes.UUID,

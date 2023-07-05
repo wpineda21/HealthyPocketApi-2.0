@@ -36,7 +36,7 @@ export async function CrearMedicamentos(req, res) {
       });
       console.log('nose pudo carnal');
   }
-  res.json("received");
+  //res.json("received");
   console.log(req.body);
 }
 

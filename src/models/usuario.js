@@ -17,10 +17,6 @@ export const usuario = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate:{
-        len: {args : [5,15], msg:" el username debe tener entre 5 y 15 caracteres, intentelo nuevamente"},
-        isAlphanumeric: {args:true , msg:"Por favor Ingrese solo Letras y Numeros"},
-      }
     },
     correo: {
         type: DataTypes.STRING,
@@ -31,17 +27,10 @@ export const usuario = sequelize.define(
       },
     nombre: {
         type: DataTypes.STRING,
-        validate:{
-          isAlpha: {msg:"Por favor Ingresar Solo Letras "},
-          notEmpty:{args:true,msg:"El Campo esta Vacio"}  
-        }
     },
     apellido: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-          isAlpha: {msg:"Por favor Ingresar Solo Letras "},
-        }
     },
     contraseña: {
         type: DataTypes.STRING,

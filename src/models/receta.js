@@ -14,10 +14,6 @@ export const receta = sequelize.define(
     nombre: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-          isAlpha: {msg:"Por favor Ingresar Solo Letras "},
-          notEmpty:{args:true,msg:"El Campo esta Vacio"}  
-        }
     },
     code_med: {
         type: DataTypes.UUID,

@@ -14,30 +14,22 @@ export const cita = sequelize.define(
     descripcion: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-          notEmpty:{args:true,msg:"El Campo esta Vacio"}  
-        }
+
     },
     fecha: {
         type: DataTypes.DATE,
         allowNull: false,
-        validate:{
-          isDate:{args:true,msg:"Por Favor Igrese una fecha valida"}  
-        }
+
     },
     tiempo_hos: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        validate:{
-          isInt:{args:true,msg:"Por Favor Ingrese Un Numero"}  
-        }
+
     },
     precio: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-          notEmpty:{args:true,msg:"El Campo esta Vacio"}  
-        }
+
     },
     code_user: {
         type: DataTypes.UUID,
