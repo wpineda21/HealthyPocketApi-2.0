@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
+
 export const usuario = sequelize.define(
   "usuario",
   {
@@ -21,9 +22,9 @@ export const usuario = sequelize.define(
     correo: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
+        /*validate:{
           isEmail: {msg:"el correo deber tener el formato Correcto  @gmail.com / @outlook.com  etc"},
-        }
+        }*/
       },
     nombre: {
         type: DataTypes.STRING,
@@ -35,13 +36,13 @@ export const usuario = sequelize.define(
     contraseña: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
+        /*validate:{
           function(password) {
             if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/.test(password))) {
                 throw new Error('La contraseña debe tener un minimo de 8 caracteres, incluyendo:  1 Mayuscula, 1 Minuscula, 1 numero especial y 1 Caracter');
             }
         }
-        }
+        }*/
     },
     code: {
       type: DataTypes.INTEGER,
@@ -52,7 +53,7 @@ export const usuario = sequelize.define(
     timestamps: false,
   }
 );
-
+await usuario.sync({ force: true });
 
 
 /*usuario.hasOne(rol,{
